@@ -26,7 +26,8 @@ namespace SafetyPanel.Controllers.Login
 
         [HttpPost]
         public ActionResult Sign_In(Adminler adminler)
-        {        
+        {   
+            //Deneme 1,2,3
             var crypto = new SimpleCrypto.PBKDF2();
             var chechSignIn = context.Admins.Where(m => m.Email == adminler.Email).ToList();
 
