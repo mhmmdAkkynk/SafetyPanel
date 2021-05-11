@@ -1,0 +1,195 @@
+﻿@{
+    ViewBag.Title = "Settings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+</head>
+<body data-theme="default" data-layout="fluid" data-sidebar-position="left" data-sidebar-behavior="sticky">
+    <div class="wrapper">
+        <div class="main">
+            <main class="content">
+                <div class="container-fluid p-0">
+                    <h1 class="h3 mb-3">Ayarlar</h1>
+                    <div class="row">
+                        <div class="col-md-3 col-xl-2">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Profil Ayarları</h5>
+                                </div>
+
+                                <div class="list-group list-group-flush" role="tablist">
+                                    <a class="list-group-item list-group-item-action active" data-bs-toggle="list" href="#account" role="tab">
+                                        Hesap Ayarları
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#password" role="tab">
+                                        Şifreni Değiştir
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#" role="tab">
+                                        Privacy and safety
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#" role="tab">
+                                        Email notifications
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#" role="tab">
+                                        Web notifications
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#" role="tab">
+                                        Widgets
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#" role="tab">
+                                        Your data
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#" role="tab">
+                                        Hesabı Sil
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-xl-10">
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="account" role="tabpanel">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="card-actions float-end">
+                                                <div class="dropdown show">
+                                                    <a href="#" data-bs-toggle="dropdown" data-bs-display="static">
+                                                        <i class="align-middle" data-feather="more-horizontal"></i>
+                                                    </a>
+
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#">Action</a>
+                                                        <a class="dropdown-item" href="#">Another action</a>
+                                                        <a class="dropdown-item" href="#">Something else here</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h5 class="card-title mb-0">Admin Genel Bilgileri</h5>
+                                        </div>
+                                        <div class="card-body">
+
+                                            <form method="post" action="/AdminSettings/AdminGeneralInfo" enctype="multipart/form-data">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Kullanıcı Adı</label>
+                                                            <input type="text" class="form-control" id="UserName" name="UserName" placeholder="Kullanıcı Adı" maxlength="15" autocomplete="off">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="inputUsername" class="form-label">Biography</label>
+                                                            <textarea rows="2" class="form-control" id="inputBio" placeholder="Tell something about yourself"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="text-center">
+                                                            @if (Model[0].FullName != null && Model[0].Photo != null)
+                                                            {
+                                                                <img alt="@Model[0].FullName" src="@Model[0].Photo.ToString()" class="rounded-circle img-responsive mt-2" width="128" height="128" /><br />
+                                                            }
+                                                            else
+                                                            {
+                                                                <img alt="" src="~/Template/SafetyPanelTemplate/appstack-bs5.bootlab.io/img/avatars/avatar2.png" class="rounded-circle img-responsive mt-2" width="128" height="128" /><br />
+                                                            }
+
+                                                            <div class="mt-2">
+                                                                <input type="file" class="btn btn-info form-control" name="Photo" id="Photo" />
+                                                            </div>
+                                                            <small>En iyi sonuç için yükleyeceğiniz dosya 128px-128px ve .jpg formatında olması tavsiye edilir.</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Değişiklikleri Kaydet</button>
+                                            </form>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="card-actions float-end">
+                                                <div class="dropdown show">
+                                                    <a href="#" data-bs-toggle="dropdown" data-bs-display="static">
+                                                        <i class="align-middle" data-feather="more-horizontal"></i>
+                                                    </a>
+
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#">Action</a>
+                                                        <a class="dropdown-item" href="#">Another action</a>
+                                                        <a class="dropdown-item" href="#">Something else here</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h5 class="card-title mb-0">Admin Kişisel Bilgileri</h5>
+                                        </div>
+                                        @Html.Action("AdminPersonalInfo", "AdminSettings")
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane fade" id="password" role="tabpanel">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Şifre Değiştir</h5>
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="inputPasswordCurrent" class="form-label">Mevcut Şifre</label>
+                                                    <input type="password" class="form-control" id="inputPasswordCurrent">
+                                                    <small><a href="#">Parolanızı mı unuttunuz?</a></small>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="inputPasswordNew" class="form-label">Yeni Şifre</label>
+                                                    <input type="password" class="form-control" id="inputPasswordNew">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="inputPasswordNew2" class="form-label">Yeni Şifre Tekrar</label>
+                                                    <input type="password" class="form-control" id="inputPasswordNew2">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary" style="float:right;">Değişiklikleri Kaydet</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-6 text-start">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a class="text-muted" href="#">Support</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="text-muted" href="#">Help Center</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="text-muted" href="#">Privacy</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="text-muted" href="#">Terms of Service</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-6 text-end">
+                            <p class="mb-0">
+                                &copy; 2021 - <a href="index.html" class="text-muted">AppStack</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="~/Scripts/SafetyScript/page_import_script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Bootstrap 5 Admin &amp; Dashboard Template">
+    <meta name="author" content="Bootlab">
+
+    <title>Giriş Yap</title>
+
+    <link rel="canonical" href="https://appstack.bootlab.io/pages-sign-in.html" />
+    <link rel="shortcut icon" href="~/Template/SafetyPanelTemplate/appstack-bs5.bootlab.io/img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <link class="js-stylesheet" href="~/Template/SafetyPanelTemplate/appstack-bs5.bootlab.io/css/light.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+</head>
+
+
+<body data-theme="default" data-layout="fluid" data-sidebar-position="left" data-sidebar-behavior="sticky">
+    <div class="main d-flex justify-content-center w-100">
+        <main class="content d-flex p-0">
+            <div class="container d-flex flex-column">
+                <div class="row h-100">
+                    <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+                        <div class="d-table-cell align-middle">
+                            <div class="text-center mt-4">
+                                <h1 class="h2">Hoşgeldin Muhammed</h1>
+                                <p class="lead">
+                                    Devam edebilmek için lütfen oturum açın
+                                </p>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="m-sm-4">
+                                        <div class="text-center">
+                                            <img src="~/Template/SafetyPanelTemplate/appstack-bs5.bootlab.io/img/avatars/avatar.jpg" alt="Chris Wood" class="img-fluid rounded-circle" width="132" height="132" />
+                                        </div>
+                                        <form>
+                                            <div class="mb-3">
+                                                <br /><br />
+                                                <input class="form-control form-control-lg" type="email" name="EmailSignIn" id="EmailSignIn" placeholder="Email Adresi" autocomplete="off" />
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="input-group">
+                                                    <input type="password" class="form-control form-control-lg" name="PasswordSignIn" id="PasswordSignIn" placeholder="Şifrenizi Tekrar Giriniz" maxlength="16">
+                                                    <div class="input-group-lg">
+                                                        <button class="btn btn-outline-primary" type="button" onclick="showPassword('PasswordSignIn')">
+                                                            <i class="fa fa-eye"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <small>
+                                                    <a href="/ResetPassword/ResetPassword">Şifrenizi mi Unuttunuz?</a>
+                                                </small>
+                                            </div>
+                                            <div>
+                                                <div class="form-check align-items-center">
+                                                    <input id="customControlInline" type="checkbox" class="form-check-input" value="remember-me" checked>
+                                                    <label class="form-check-label text-small" for="customControlInline">Beni Hatırla</label>
+                                                </div>
+                                            </div>
+                                            <div class="text-center mt-3" style="margin-bottom:10%;">
+                                                <button class="btn btn-lg btn-primary" type="button" onclick="SignIn()">Giriş Yap</button>
+                                            </div>
+                                            <div class="text-center mt-3" style="margin-left:4%;">
+                                                <label class="form-check-label text-small" for="customControlInline"><a href="/SignUp/Sign_Up">Hesap Oluştur&nbsp;&nbsp;<i class="fas fa-arrow-right" style="color:#055dc9"></i></a></label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="~/Template/SafetyPanelTemplate/appstack-bs5.bootlab.io/js/app.js"></script>
+    <script src="~/Scripts/SafetyScript/page_import_script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{137BA10A-A046-4D72-BB0F-7407D4EE0752}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SafetyPanel</RootNamespace>
+    <AssemblyName>SafetyPanel</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44306</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SimpleCrypto, Version=26.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleCrypto.0.3.30.26\lib\SimpleCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Admin\AdminSettingsController.cs" />
+    <Compile Include="Controllers\errorCode.cs" />
+    <Compile Include="Controllers\Login\HomeController.cs" />
+    <Compile Include="Controllers\Login\ResetPasswordController.cs" />
+    <Compile Include="Controllers\Login\SignInController.cs" />
+    <Compile Include="Controllers\Login\SignUpController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AdminHayat.cs" />
+    <Compile Include="Models\Admin\Adminler.cs" />
+    <Compile Include="Models\Adres\District.cs" />
+    <Compile Include="Models\Adres\Province.cs" />
+    <Compile Include="Models\Context.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\SafetyScript\page_import_script.js" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\calendar.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\charts-apexcharts.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\charts-chartjs.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\css\light.css" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\dashboard-analytics.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\dashboard-crypto.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\dashboard-default.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\dashboard-default4965.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\dashboard-default6534.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\dashboard-default6a08.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\dashboard-defaultc765.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\dashboard-defaultc7f2.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\dashboard-defaultd976.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\dashboard-saas.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\dashboard-social.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\docs-changelog.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\docs-customization.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\docs-installation.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\docs-introduction.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\docs-plugins.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-brands-400.svg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-regular-400.svg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-solid-900.svg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\forms-advanced-inputs.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\forms-basic-inputs.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\forms-editors.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\forms-floating-labels.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\forms-input-groups.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\forms-layouts.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\forms-validation.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\forms-wizard.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\gif\await.gif" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\gif\error.gif" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\gif\mail.gif" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\gif\password.gif" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\gif\tenor.gif" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\gif\warning.gif" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\icons-feather.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\icons-font-awesome.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\avatars\avatar.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\avatars\avatar.png" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\avatars\avatar2.png" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\brands\bootstrap.svg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\e74b38cbb1cf9d5ddd4edf15557fedd1.gif" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\favicon.ico" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\flags\de.png" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\flags\es.png" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\flags\nl.png" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\flags\us.png" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\illustrations\customer-support.png" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\illustrations\searching.png" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\illustrations\social.png" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\kopya14.gif" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\photos\nature.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\photos\unsplash-1.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\photos\unsplash-2.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\photos\unsplash-3.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\screenshots\dashboard-analytics.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\screenshots\dashboard-crypto.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\screenshots\dashboard-default.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\screenshots\dashboard-saas.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\screenshots\dashboard-social.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\screenshots\mixed.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\screenshots\pages-projects-list.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\screenshots\sidebar-compact.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\screenshots\sidebar-right.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\screenshots\theme-colored.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\screenshots\theme-dark.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\screenshots\theme-default.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\screenshots\theme-light.jpg" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\index-2.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\index.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\js\app.js" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\js\settings.js" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\maps-google.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\maps-vector.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\notifications.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\pages-404.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\pages-500.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\pages-blank.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\pages-chat.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\pages-clients.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\pages-invoice.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\pages-pricing.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\pages-profile.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\pages-projects-detail.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\pages-projects-list.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\pages-reset-password.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\pages-settings.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\pages-sign-in.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\pages-sign-up.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\pages-tasks.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\tables-bootstrap.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\tables-datatables-ajax.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\tables-datatables-buttons.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\tables-datatables-column-search.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\tables-datatables-fixed-header.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\tables-datatables-multi.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\tables-datatables-responsive.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\ui-alerts.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\ui-buttons.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\ui-cards.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\ui-carousel.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\ui-embed-video.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\ui-general.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\ui-grid.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\ui-modals.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\ui-offcanvas.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\ui-tabs.html" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\ui-typography.html" />
+    <Content Include="Template\SafetyPanelTemplate\backblue.gif" />
+    <Content Include="Template\SafetyPanelTemplate\cdnjs.cloudflare.com\ajax\libs\highlight.js\9.12.0\highlight.min.js" />
+    <Content Include="Template\SafetyPanelTemplate\fade.gif" />
+    <Content Include="Template\SafetyPanelTemplate\hts-cache\new.lst" />
+    <Content Include="Template\SafetyPanelTemplate\hts-cache\new.txt" />
+    <Content Include="Template\SafetyPanelTemplate\hts-cache\readme.txt" />
+    <Content Include="Template\SafetyPanelTemplate\hts-log.txt" />
+    <Content Include="Template\SafetyPanelTemplate\index.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-brands-400.eot" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-brands-400.ttf" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-brands-400.woff" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-brands-400.woff2" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-brands-400d41d.eot" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-regular-400.eot" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-regular-400.ttf" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-regular-400.woff" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-regular-400.woff2" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-regular-400d41d.eot" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-solid-900.eot" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-solid-900.ttf" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-solid-900.woff" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-solid-900.woff2" />
+    <Content Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\fonts\fa-solid-900d41d.eot" />
+    <Content Include="Template\SafetyPanelTemplate\hts-cache\doit.log" />
+    <Content Include="Template\SafetyPanelTemplate\hts-cache\new.zip" />
+    <Content Include="Template\SafetyPanelTemplate\hts-cache\winprofile.ini" />
+    <Content Include="Views\SignIn\Sign_In.cshtml" />
+    <Content Include="Views\SignUp\Sign_Up.cshtml" />
+    <Content Include="Views\ResetPassword\ResetPassword.cshtml" />
+    <Content Include="Views\Home\Home_Page.cshtml" />
+    <Content Include="Views\ResetPassword\ResetPasswordConfirm.cshtml" />
+    <Content Include="Views\AdminSettings\Settings.cshtml" />
+    <Content Include="Views\AdminSettings\AdminPersonalInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Template\SafetyPanelTemplate\appstack-bs5.bootlab.io\img\AdminPhoto\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56572</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44306/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

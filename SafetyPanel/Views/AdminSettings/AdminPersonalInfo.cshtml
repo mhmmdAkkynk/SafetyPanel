@@ -1,0 +1,46 @@
+﻿@model SafetyPanel.Models.AdminHayat
+
+<div class="card-body">
+    <form>
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label for="inputFirstName" class="form-label">Ad</label>
+                <input type="text" id="FirstName" name="FirstName" class="form-control" placeholder="Ad" value="@ViewBag.FirstName">
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="inputLastName" class="form-label">Soyad</label>
+                <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Soyad" value="@ViewBag.LastName">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="Email" name="Email" placeholder="Email" value="@Model.AdminlerInformation.Select(m=>m.Email).FirstOrDefault()">
+        </div>
+        <div class="mb-3">
+            <label for="inputAddress" class="form-label">Adres</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Adres">
+        </div>
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label for="inputCity" class="form-label">İl</label>
+                <select id="Province" class="form-control" onchange="ChangeProvince()">
+                    @foreach (var value in Model.Provinces)
+                    {
+                        <option value="@value.Id">@value.ProvincesName</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="inputState" class="form-label">İlçe</label>
+                <select id="District" class="form-control">
+                    @foreach (var value in Model.Districts)
+                    {
+                        <option value="@value.Province">@value.DistrictName</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="AdminPersonelInfo()">Değişiklikleri Kaydet</button>
+    </form>
+</div>
+
